@@ -1,0 +1,15 @@
+name: Build
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - "app/**"
+      - "Dockerfile"
+      - "pyproject.toml"
+
+jobs:
+  build:
+    uses: your-username/devops-actions/.github/workflows/reusable-build.yml@main
+    with:
+      image_name: your-dockerhub-username/service-b

@@ -1,0 +1,16 @@
+name: Deploy
+
+on:
+  workflow_run:
+    workflows: ["Push"]
+    types: [completed]
+
+jobs:
+  deploy:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    uses: your-username/devops-actions/.github/workflows/reusable-deploy.yml@main
+    with:
+      service_name: service-b
+      image_name: your-dockerhub-username/service-b
+    secrets:
+      GITOPS_TOKEN: ${{ secrets.GITOPS_TOKEN }}

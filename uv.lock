@@ -175,7 +175,7 @@ wheels = [
 ]
 
 [[package]]
-name = "service-a"
+name = "service-b"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
