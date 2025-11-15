@@ -8,7 +8,7 @@ on:
 jobs:
   push:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
-    uses: your-username/devops-actions/.github/workflows/reusable-push.yml@main
+    uses: your-username/devops-actions/.github/workflows/reusable-push.yml@master
     with:
       image_name: your-dockerhub-username/service-b
       image_tag: ${{ github.event.workflow_run.head_sha }}

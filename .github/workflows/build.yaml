@@ -2,7 +2,7 @@ name: Build
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
     paths:
       - "app/**"
       - "Dockerfile"
@@ -10,6 +10,6 @@ on:
 
 jobs:
   build:
-    uses: your-username/devops-actions/.github/workflows/reusable-build.yml@main
+    uses: your-username/devops-actions/.github/workflows/reusable-build.yml@master
     with:
       image_name: your-dockerhub-username/service-b
